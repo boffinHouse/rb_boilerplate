@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+
+	<link href="dist/styles.css" rel="stylesheet" />
+	<script src="node_modules/babel-core/browser.js"></script>
+	<script src="dist/object-assign.js"></script>
+
+	<script src="https://boffinhouse.github.io/rawblock/sources/js/libs/rb-life.js" type="text/babel"></script>
+	<script src="https://boffinhouse.github.io/rawblock/sources/js/libs/dom.js"  type="text/babel"></script>
+
+	<script src="node_modules/handlebars/dist/handlebars.js"></script>
+
+	<script>
+		window.moduleFilename = 'rb_boilerplate';
+	</script>
+
+	<script>
+		document.write('<script src="sources/js/' + window.moduleFilename + '.js" type="text/babel"><\/script>')
+	</script>
+
+
+</head>
+<body>
+
+<div id="example" style="max-width: 80%; margin: auto;">
+</div>
+
+<script>
+	Promise.all([fetch('sources/assemble/' + moduleFilename + '.hbs'), fetch('sources/data/' + moduleFilename + '.json')])
+		.then(function(data) {
+			return Promise.all([data[0].text(), data[1].json()]);
+		})
+		.then(function(data){
+			var template = Handlebars.compile(data[0]);
+			var html =  template(data[1]).replace(/^\s*-+\s*.*\s*-+$/mi, '');
+			document.querySelector('#example').innerHTML = html;
+		})
+	;
+</script>
+
+<button type="button" class="open">open</button>
+<script>
+	document.querySelector('button.open').addEventListener('click', function(){
+		document.querySelector('.rb-dialog')._rbWidget.open();
+	});
+</script>
+
+</body>
+</html>

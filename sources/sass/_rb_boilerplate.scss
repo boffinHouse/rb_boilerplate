@@ -1,0 +1,11 @@
+.rb-boilerplate {
+
+
+	@if function-exists(rbToJSON) {
+		$boilerplateJSCFG: (
+
+		);
+
+		@include exportToJS($dialogJSCFG);
+	}
+}
