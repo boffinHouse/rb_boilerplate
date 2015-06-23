@@ -1,0 +1,15 @@
+---
+title: Index – Project-Overview
+layout: tpl.hbs
+---
+
+
+
+{{#with rb_boilerplate}}
+	{{> rb_boilerplate}}
+{{/with}}
+
+{{#mergeJSON rb_boilerplate '{"hello": "custom hello"}'}}
+	{{> rb_boilerplate}}
+{{/mergeJSON}}
+
