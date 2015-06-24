@@ -9,7 +9,7 @@ layout: tpl.hbs
 	{{> rb_boilerplate}}
 {{/with}}
 
-{{#mergeJSON rb_boilerplate '{"hello": "custom hello"}'}}
+{{#mergeJSON rb_boilerplate 'hello: "custom content for boilerplate"'}}
 	{{> rb_boilerplate}}
 {{/mergeJSON}}
 
