@@ -3,9 +3,9 @@
 
 	@if function-exists(rbToJSON) {
 		$boilerplateJSCFG: (
-
+			watchCSS: false
 		);
 
-		@include exportToJS($dialogJSCFG);
+		@include exportToJS($boilerplateJSCFG);
 	}
 }
