@@ -43,9 +43,9 @@ var writeAll = function(){
 		'sources/data/rb_boilerplate.json',
 		'sources/js/rb_boilerplate.js',
 		'sources/sass/_rb_boilerplate.scss',
-		'assemble/layouts/tpl.hbs',
-		'assemble/pages/index.hbs',
-		'styles_config.scss',].forEach(write);
+		'component-helpers/assemble/layouts/tpl.hbs',
+		'component-helpers/assemble/pages/index.hbs',
+		'component-helpers/sass/styles_config.scss',].forEach(write);
 };
 
 rl.question('Name of your project: ', function(name) {
