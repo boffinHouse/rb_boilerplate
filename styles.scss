@@ -1,8 +1,0 @@
-@import "node_modules/rb_layout_defaults/sources/sass/normalize";
-@import "node_modules/rb_layout_defaults/sources/sass/rb_rem_calc";
-@import "node_modules/rb_layout_defaults/sources/sass/rb_stringify";
-@import "node_modules/rb_layout_defaults/sources/sass/layout_config";
-@import "node_modules/rb_layout_defaults/sources/sass/grid_layout_generator";
-@import 'sources/sass/_rb_boilerplate';
-
-@include generate-global-styles($breakpointConfigs);
