@@ -1,26 +1,61 @@
 <!DOCTYPE html>
- <html class="no-js" lang="de">
+ <html lang="de">
 
 	<head>
 		<meta charset="utf-8" />
 		<title>rb-boilerplate</title>
 		<link href="dist/styles.css" rel="stylesheet" />
-		<script src="node_modules/babel-core/browser.js"></script>
 		<script src="dist/object-assign.js"></script>
 
-		<script src="https://boffinhouse.github.io/rawblock/sources/js/libs/rb-life.js" type="text/babel"></script>
-		<script src="https://boffinhouse.github.io/rawblock/sources/js/libs/dom.js"  type="text/babel"></script>
+		<script src="https://boffinhouse.github.io/rawblock/sources/js/libs/rb-life.js"></script>
 
+
+
+	</head>
+	<body>
+		<form id="libchooser">
+			<label>
+				<input type="radio" name="domlib"
+				       value="rbdom"
+				       data-url="https://boffinhouse.github.io/rawblock/sources/js/libs/dom.js"
+				       checked />
+				rbdom
+			</label>
+			<label>
+				<input type="radio" name="domlib"
+				       value="jquery"
+						data-url="http://code.jquery.com/jquery-2.1.4.js" />
+				jquery
+			</label>
+		</form>
+		{{> body }}
+
+
+		<script>
+			(function(){
+				var input;
+				document.querySelector('#libchooser').addEventListener('change', function(){
+					var value = this.querySelector(':checked').value;
+					location.search = '?domlib='+value;
+				});
+
+				if((location.search || '').match(/domlib\=(.+)(&)*/)){
+					input = document.querySelector('#libchooser [value="'+ RegExp.$1 +'"]');
+
+				}
+				if(!input){
+					input = document.querySelector('#libchooser [value="rbdom"]');
+				}
+				input.checked = true;
+				document.write('<script src="' + input.getAttribute('data-url') +'"><\/script>');
+			})();
+		</script>
 		<script>
 			window.moduleFilename = 'rb_boilerplate';
 		</script>
 
 		<script>
-			document.write('<script src="sources/js/' + window.moduleFilename + '.js" type="text/babel"><\/script>')
+			document.write('<script src="sources/js/' + window.moduleFilename + '.js"><\/script>')
 		</script>
-	</head>
-	<body>
-		{{> body }}
 	</body>
-
 </html>

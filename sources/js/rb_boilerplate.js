@@ -1,27 +1,23 @@
-(function(window, factory) {
-	var myModule = factory(window, window.document);
-
-	if(typeof module == 'object' && module.exports){
-		module.exports = myModule;
+(function(factory) {
+	if(typeof define === 'function' && define.amd){
+		define(factory);
 	}
-}(typeof window != 'undefined' ? window : this , function(window, document) {
+	else if(typeof module == 'object' && module.exports){
+		module.exports = factory();
+	} else {
+		factory();
+	}
+}( function() {
 	'use strict';
 	var dom = window.jQuery || window.dom;
 
-	const DEFAULTS = {};
-
-	class Boilerplate extends rbLife.Widget {
-		constructor(element){
-
-			super(element);
-
-			this.element = element;
+	return rbLife.Widget.extend('boilerplate', {
+		defaults: {},
+		init: function(element){
+			this._super(element);
 			this.$element = dom(element);
-		}
-	}
 
-	Boilerplate.defaults = DEFAULTS;
-
-	rbLife.register('boilerplate', Boilerplate);
-	return Boilerplate;
+			console.log(this.element, this.options);
+		},
+	});
 }));
