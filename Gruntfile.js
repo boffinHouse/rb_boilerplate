@@ -70,7 +70,7 @@
 					data: 'sources/data/**/*.{json,yml}',
 					helpers: ['component-helpers/assemble/helper/*.js'],
 					layoutdir: 'component-helpers/assemble/layouts/',
-					partials: ['sources/assemble/**/*.hbs']
+					partials: ['sources/assemble/**/*.hbs', 'component-helpers/assemble/partials/**/*.hbs']
 				},
 				dev: {
 					options: {
