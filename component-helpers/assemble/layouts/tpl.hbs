@@ -26,8 +26,6 @@
 				jquery
 			</label>
 		</form>
-		{{> body }}
-
 		<script>
 			(function(){
 				var input;
@@ -47,12 +45,11 @@
 				document.write('<script src="' + input.getAttribute('data-url') +'"><\/script>');
 			})();
 		</script>
-		<script>
-			window.moduleFilename = 'rb_boilerplate';
-		</script>
 
 		<script>
-			document.write('<script src="sources/js/' + window.moduleFilename + '.js"><\/script>')
+			document.write('<script src="sources/js/rb_boilerplate.js"><\/script>')
 		</script>
+
+		{{> body }}
 	</body>
 </html>
