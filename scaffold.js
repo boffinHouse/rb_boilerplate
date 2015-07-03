@@ -48,6 +48,7 @@ var writeAll = function(){
 		'component-helpers/sass/styles_config.scss',
 		'tests/intern.js',
 		'tests/unit/boilerplate.js',
+		'package.json',
 	].forEach(write);
 };
 
