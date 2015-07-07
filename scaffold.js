@@ -40,6 +40,7 @@ var writeAll = function(){
 
 
 	['sources/assemble/rb_boilerplate.hbs',
+		'README.md',
 		'package.json',
 		'sources/data/rb_boilerplate.json',
 		'sources/js/rb_boilerplate.js',
