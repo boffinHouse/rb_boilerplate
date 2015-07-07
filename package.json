@@ -24,7 +24,7 @@
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/boffinHouse/rb-rb_boilerplate/issues"
+    "url": "https://github.com/boffinHouse/rb_boilerplate/issues"
   },
   "homepage": "https://github.com/boffinHouse/rb_boilerplate#readme",
   "devDependencies": {

@@ -40,16 +40,13 @@ var writeAll = function(){
 
 
 	['sources/assemble/rb_boilerplate.hbs',
+		'package.json',
 		'sources/data/rb_boilerplate.json',
 		'sources/js/rb_boilerplate.js',
 		'sources/sass/_rb_boilerplate.scss',
 		'component-helpers/assemble/layouts/tpl.hbs',
 		'component-helpers/assemble/pages/index.hbs',
-		'component-helpers/sass/styles_config.scss',
-		'tests/intern.js',
-		'tests/unit/boilerplate.js',
-		'package.json',
-	].forEach(write);
+		'component-helpers/sass/styles_config.scss',].forEach(write);
 };
 
 rl.question('Name of your project: ', function(name) {
