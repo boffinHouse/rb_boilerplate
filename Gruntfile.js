@@ -78,11 +78,13 @@
 					},
 					files: [
 						{
-							cwd: 'component-helpers/assemble/pages/',
 							dest: 'dist',
 							expand: true,
 							flatten: true,
-							src: ['**/*.hbs']
+							src: [
+								'component-helpers/assemble/pages/**/*.hbs',
+								'sources/assemble/pages/**/*.hbs'
+							]
 						}
 					]
 				}
