@@ -1,6 +1,8 @@
 @import "sass/**/*.scss";
 @import "../component-helpers/sass/component.scss";
 
+@include rb_generate_layout_styles($breakpointConfigs);
+
 @import '../sources/sass/rb_boilerplate';
 
-@include rb_generate_layout_styles($breakpointConfigs);
+
