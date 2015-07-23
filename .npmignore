@@ -9,6 +9,7 @@ tmp
 Gruntfile.js
 .editorconfig
 component-helpers
+tests
 .sass-cache
 .css
 
