@@ -9,15 +9,30 @@
 	}
 }( function() {
 	'use strict';
-	var dom = window.jQuery || window.dom;
+	var dom = window.rb.$;
 
 	return rbLife.Widget.extend('boilerplate', {
 		defaults: {},
 		init: function(element){
 			this._super(element);
-			this.$element = dom(element);
 
 			console.log(this.element, this.options);
 		},
+		onceAttached: function(){
+
+		},
+		setOption: function(name, value){
+			this._super(name, value);
+		},
+		/*
+		attached: function(){
+
+		},
+		*/
+		/*
+		detached: function(){
+
+		},
+		*/
 	});
 }));
