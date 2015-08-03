@@ -17,12 +17,12 @@ define([
 			widgetElement = document.createElement('div');
 			document.body.appendChild(widgetElement);
 
-			widget = rbLife.create(widgetElement, rbLife._behaviors.boilerplate);
+			widget = rb.life.create(widgetElement, rb.life._behaviors.boilerplate);
 		},
 		afterEach: function () {},
 
 		'basic tests': function() {
-			expect(rbLife._behaviors.boilerplate, '').to.exist;
+			expect(rb.life._behaviors.boilerplate, '').to.exist;
 		},
 
 	});
