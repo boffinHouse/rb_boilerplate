@@ -1,6 +1,7 @@
 ( function() {
 	'use strict';
-	var $ = window.rb.$;
+	var rb = window.rb;
+	var $ = rb.$;
 
 	return rb.life.Widget.extend('boilerplate', {
 		defaults: {},
