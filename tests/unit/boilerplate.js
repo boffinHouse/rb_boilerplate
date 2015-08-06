@@ -7,6 +7,7 @@ define([
 	'intern/order!https://boffinhouse.github.io/rawblock/sources/js/libs/rb-life.js',
 	'intern/order!sources/js/modules/rb_boilerplate',
 ], function(registerSuite, expect) {
+	/* jshint expr: true */
 	var widgetElement, widget;
 
 	registerSuite({

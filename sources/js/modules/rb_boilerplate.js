@@ -1,5 +1,6 @@
 ( function() {
 	'use strict';
+	/* jshint eqnull: true */
 	var rb = window.rb;
 	var $ = rb.$;
 

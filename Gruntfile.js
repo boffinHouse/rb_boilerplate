@@ -7,6 +7,7 @@
 		grunt.task.loadNpmTasks('grunt-contrib-clean');
 		grunt.task.loadNpmTasks('grunt-autoprefixer');
 		grunt.task.loadNpmTasks('grunt-contrib-watch');
+		grunt.task.loadNpmTasks('grunt-contrib-jshint');
 		grunt.task.loadNpmTasks('assemble');
 
 		grunt.initConfig({
@@ -55,6 +56,16 @@
 					src: 'dist/css/*.css'
 				}
 			},
+			jshint: {
+				options: {
+					jshintrc: true
+				},
+				js: {
+					files: {
+						src: ['sources/js/**/*.js', 'tests/**/*.js']
+					}
+				}
+			},
 			watch: {
 				scss: {
 					files: ['sources/sass/**/*.scss'],
@@ -63,7 +74,11 @@
 				assemble: {
 					files: ['sources/assemble/**/*.hbs', 'component-helpers/assemble/**/*.hbs', 'sources/data/**/*.json'],
 					tasks: ['assemble']
-				}
+				},
+				jshint: {
+					files: ['sources/js/**/*.js', 'tests/**/*.js'],
+					tasks: ['jshint']
+				},
 			},
 			assemble: {
 				options: {
@@ -101,7 +116,7 @@
 
 		grunt.registerTask( 'css', ['generate-tmp-styles-scss', 'sass', 'autoprefixer', 'clean:tmp']);
 		grunt.registerTask('build', [ 'clean:dist', 'copy:js', 'css', 'assemble']);
-		grunt.registerTask('default', ['build', 'watch']);
+		grunt.registerTask('default', ['jshint', 'build', 'watch']);
 
 		grunt.registerTask( 'generate-tmp-styles-scss', 'Generate styles tmp file', function() {
 			var resultContent = grunt.file.read( 'component-helpers/sass/styles_config.scss' );
