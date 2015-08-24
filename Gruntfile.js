@@ -72,7 +72,7 @@
 					tasks: ['build']
 				},
 				assemble: {
-					files: ['sources/assemble/**/*.hbs', 'component-helpers/assemble/**/*.hbs', 'sources/data/**/*.json'],
+					files: ['sources/assemble/**/*.hbs', 'component-helpers/assemble/**/*.hbs', 'sources/assemble/data/**/*.json'],
 					tasks: ['assemble']
 				},
 				jshint: {
