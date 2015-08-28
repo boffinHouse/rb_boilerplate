@@ -7,16 +7,14 @@
 	return rb.life.Widget.extend('boilerplate', {
 		defaults: {},
 
-		/* init use init to construct/prepare your widget, but organize your read/write cycles (start layout reads in init and write to DOM in initWrite)*/
+		/* use init to construct/prepare/create your widget, but organize your read/write cycles (start layout reads in init and write to DOM using _writeLayout)*/
 		init: function(element){
 			this._super(element);
 
 			console.log(this.element, this.$element, this.options);
-		},
 
-		/* initWrite is invoked after init and is optimized for DOM writes */
-		initWrite: function(){
-
+			//this._writeLayout = rb.rAF(this._writeLayout, this);
+			//this._writeLayout();
 		},
 
 		/*
