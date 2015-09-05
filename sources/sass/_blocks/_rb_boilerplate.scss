@@ -4,14 +4,14 @@ rb-boilerplate
 ----------------------------------------------------------
 
 **********************************************************/
+$boilerplateJSCFG: (
+	watchCSS: false
+);
+
 .rb-boilerplate {
 
 
 	@if function-exists(rbToJSON) {
-		$boilerplateJSCFG: (
-			watchCSS: false
-		);
-
 		@include exportToJS($boilerplateJSCFG);
 	}
 }
