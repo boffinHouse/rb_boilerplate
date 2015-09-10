@@ -36,16 +36,19 @@
 		 but only use if really needed (+ not suitable for widgets, that have a lot of instances (50+) on one page at the same time):
 		 the pure existence of one of this callback methods can slow down 'remove' performance
 		 */
-		/*
-		attached: function(){
+		//attached: function(){
+		//
+		//},
 
-		},
-		*/
-
-		/*
-		detached: function(){
-
-		},
-		*/
+		//detached: function(){
+		//
+		//},
+		/* you can use getters/setters */
+		//get yourGetter(){
+		//
+		//},
+		//set yourSetter(value){
+		//
+		//}
 	});
 })();
