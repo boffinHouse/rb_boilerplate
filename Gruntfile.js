@@ -82,7 +82,7 @@
 			},
 			assemble: {
 				options: {
-					data: 'sources/data/**/*.{json,yml}',
+					data: 'sources/assemble/data/**/*.{json,yml}',
 					helpers: ['component-helpers/assemble/helper/*.js'],
 					layoutdir: 'component-helpers/assemble/layouts/',
 					partials: ['sources/assemble/**/*.hbs']
