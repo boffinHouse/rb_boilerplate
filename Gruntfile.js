@@ -2,6 +2,7 @@
 	'use strict';
 
 	module.exports = function (grunt) {
+		grunt.task.loadNpmTasks('grunt-auto-install');
 		grunt.task.loadNpmTasks('grunt-sass');
 		grunt.task.loadNpmTasks('grunt-contrib-copy');
 		grunt.task.loadNpmTasks('grunt-contrib-clean');
@@ -11,6 +12,13 @@
 		grunt.task.loadNpmTasks('assemble');
 
 		grunt.initConfig({
+			auto_install: {
+				subdir: {
+					options: {
+						bower: 'false'
+					}
+				}
+			},
 			sass: {
 				options: {
 					outputStyle: 'nested',
@@ -115,7 +123,7 @@
 		});
 
 		grunt.registerTask( 'css', ['generate-tmp-styles-scss', 'sass', 'autoprefixer', 'clean:tmp']);
-		grunt.registerTask('build', [ 'clean:dist', 'copy:js', 'css', 'assemble']);
+		grunt.registerTask('build', [ 'auto_install', 'clean:dist', 'copy:js', 'css', 'assemble']);
 		grunt.registerTask('default', ['jshint', 'build', 'watch']);
 
 		grunt.registerTask( 'generate-tmp-styles-scss', 'Generate styles tmp file', function() {
