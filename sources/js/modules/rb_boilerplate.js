@@ -4,7 +4,7 @@
 	var rb = window.rb;
 	var $ = rb.$;
 
-	return rb.life.Widget.extend('boilerplate', {
+	var Boilerplate = rb.Widget.extend('boilerplate', {
 		defaults: {
 			debug: true,
 		},
@@ -17,17 +17,18 @@
 
 			//this._writeLayout = rb.rAF(this._writeLayout, this, true);
 		},
+		statics: {
 
+		},
+		setOption: function(name, value){
+			this._super(name, value);
+		},
 		/*
 		onceAttached is invoked in the same cycle as init, but after all other current widgets are also initialized
 		use for tight dependencies between different widgets
 		*/
 		onceAttached: function(){
 
-		},
-
-		setOption: function(name, value){
-			this._super(name, value);
 		},
 
 		/*
