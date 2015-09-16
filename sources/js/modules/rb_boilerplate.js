@@ -24,10 +24,10 @@
 			this._super(name, value);
 		},
 		/*
-		onceAttached is invoked in the same cycle as init, but after all other current widgets are also initialized
+		 attachedOnce is invoked in the same cycle as init, but after all other current widgets are also initialized
 		use for tight dependencies between different widgets
 		*/
-		onceAttached: function(){
+		attachedOnce: function(){
 
 		},
 
