@@ -49,8 +49,9 @@ var writeAll = function(){
 		'component-helpers/assemble/pages/index.hbs',
 		'component-helpers/sass/styles_config.scss',
 		'component-helpers/sass/styles_config.scss',
-		'tests/intern.js',
-		'tests/unit/boilerplate.js',
+		'tests/index.html',
+		'tests/tests/boilerplate-tests.js',
+		'tests/assets/boilerplate.css',
 	].forEach(write);
 };
 

@@ -3,7 +3,6 @@ build
 dev
 dist
 bower_components
-index.html
 tmp
 .sass-cache
 .css
