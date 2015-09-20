@@ -44,7 +44,6 @@
     "lodash": "^3.10.1",
     "qunitjs": "^1.19.0",
     "rb_layout_defaults": "^0.1.8",
-    "sinon": "^1.16.1",
-    "syn": "^0.1.2"
+    "sinon": "^1.16.1"
   }
 }
