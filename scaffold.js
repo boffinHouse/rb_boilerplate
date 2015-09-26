@@ -44,6 +44,7 @@ var writeAll = function(){
 		'package.json',
 		'sources/assemble/data/rb_boilerplate.json',
 		'sources/js/modules/rb_boilerplate.js',
+		'sources/js/modules/rb_boilerplate.es6',
 		'sources/sass/_blocks/_rb_boilerplate.scss',
 		'component-helpers/assemble/layouts/default_tpl.hbs',
 		'component-helpers/assemble/pages/index.hbs',
