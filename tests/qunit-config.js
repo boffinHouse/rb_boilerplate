@@ -2,8 +2,12 @@
 	'use strict';
 	var fixtureHTML = document.getElementById('qunit-fixture').innerHTML;
 
+	QUnit.begin(function(){
+		rb.life.init();
+	});
+
 	QUnit.testDone(function() {
-		document.getElementById('qunit-fixture').innerHTML = fixtureHTML;
+		//document.getElementById('qunit-fixture').innerHTML = fixtureHTML;
 	});
 
 	QUnit.config.urlConfig.push({

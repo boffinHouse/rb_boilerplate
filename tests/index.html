@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>QUnit rb_boilerplate</title>
 	<link rel="stylesheet" href="../node_modules/qunitjs/qunit/qunit.css" />
-	<link rel="stylesheet" href="assets/boilerplate.css" />
+	<link rel="stylesheet" href="assets/boilerplate-tests.css" />
 	<style>
 		/*
 		#qunit-fixture {
@@ -16,8 +16,7 @@
 <body>
 <div id="qunit"></div>
 <div id="qunit-fixture">
-	<div class="rb-boilerplate" data-module="boilerplate"></div>
-	<iframe></iframe>
+
 </div>
 <script src="../node_modules/qunitjs/qunit/qunit.js"></script>
 
@@ -39,7 +38,9 @@
 	})();
 </script>
 <script src="https://boffinhouse.github.io/rawblock/sources/js/libs/rawblock.js"></script>
-
+<script>
+	rb.life.autoStart = false;
+</script>
 <script src="../sources/js/modules/rb_boilerplate.js" data-cover=""></script>
 
 <script src="tests/boilerplate-tests.js"></script>

@@ -15,7 +15,10 @@
 
 			this.log(this.element, this.$element, this.options, this);
 
-			//this._writeLayout = rb.rAF(this._writeLayout, null || this, true);
+			//this._writeLayout = rb.rAF(this._writeLayout, {that: this});
+
+			//trigger events
+			//this._trigger();
 		},
 		/* events simple event bindings with event delegation */
 		events: {

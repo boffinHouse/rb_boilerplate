@@ -52,7 +52,7 @@ var writeAll = function(){
 		'component-helpers/sass/styles_config.scss',
 		'tests/index.html',
 		'tests/tests/boilerplate-tests.js',
-		'tests/assets/boilerplate.css',
+		'tests/assets/boilerplate-tests.css',
 	].forEach(write);
 };
 
