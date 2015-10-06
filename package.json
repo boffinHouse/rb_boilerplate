@@ -37,13 +37,13 @@
     "grunt-contrib-copy": "^0.8.1",
     "grunt-contrib-jshint": "^0.11.3",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-sass": "^1.0.0",
-    "handlebars": "^4.0.2",
+    "grunt-sass": "^1.1.0-beta",
+    "handlebars": "^4.0.3",
     "handlebars-helper-partial": "^0.2.0",
     "jit-grunt": "^0.9.1",
     "lodash": "^3.10.1",
     "qunitjs": "^1.19.0",
-    "rb_layout_defaults": "^0.1.8",
-    "sinon": "^1.16.1"
+    "rb_layout_defaults": "^0.1.9",
+    "sinon": "^1.17.1"
   }
 }
