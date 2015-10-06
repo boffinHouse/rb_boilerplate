@@ -5,6 +5,11 @@
 	var $ = rb.$;
 
 	class Boilerplate extends rb.Widget {
+		static get defaults(){
+			return {
+				debug: true,
+			};
+		}
 		/* use to construct/prepare/create your widget, but organize your read/write cycles (start layout reads in constructor and write to DOM using rb.rAF (see _writeLayout))*/
 		constructor(element){
 			super(element);
@@ -45,10 +50,6 @@
 		//
 		//}
 	}
-
-	Object.assign(Boilerplate.defaults, {
-		debug: true,
-	});
 
 	rb.life.register('boilerplate', Boilerplate);
 })();
