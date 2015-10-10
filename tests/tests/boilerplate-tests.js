@@ -9,7 +9,7 @@
 
 	QUnit.test("boilerplate.init", function( assert ){
 		//rb.$('#qunit-fixture');
-		//var widget = rb.$('.rb-boilerplate').rbWidget();
+		//var widget = rb.$('.rb-boilerplate').rbComponent();
 		//assert.ok(typeof widget.init == 'function');
 
 	});

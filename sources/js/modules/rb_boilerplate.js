@@ -4,8 +4,8 @@
 	var rb = window.rb;
 	var $ = rb.$;
 
-	var Boilerplate = rb.Widget.extend('boilerplate',
-		/** @lends rb.widgets.boilerplate.prototype */
+	var Boilerplate = rb.Component.extend('boilerplate',
+		/** @lends rb.components.boilerplate.prototype */
 		{
 
 			/**
@@ -16,7 +16,7 @@
 			defaults: {
 				debug: true,
 			},
-			/* use init to construct/prepare/create your widget, but organize your read/write cycles (start layout reads in init and write to DOM using rb.rAF (see _writeLayout))*/
+			/* use init to construct/prepare/create your component, but organize your read/write cycles (start layout reads in init and write to DOM using rb.rAF (see _writeLayout))*/
 			/**
 			 * @classdesc Class component to create a boilerplate.
 			 * @constructs
@@ -26,7 +26,7 @@
 			 *     <div></div>
 			 * </div>
 			 * @example
-			 * rb.$('.rb-boilerplate').rbWidget();
+			 * rb.$('.rb-boilerplate').rbComponent();
 			 */
 			init: function(element){
 				this._super(element);
@@ -54,9 +54,9 @@
 			},
 
 			/*
-			 attached/detached are invoked every time the widget element is inserted or removed from the document.
+			 attached/detached are invoked every time the component element is inserted or removed from the document.
 			 use to bind/unbind global events (resize/scroll) or timers.
-			 but only use if really needed (+ not suitable for widgets, that have a lot of instances (100+) on one page at the same time):
+			 but only use if really needed (+ not suitable for components, that have a lot of instances (100+) on one page at the same time):
 			 the pure existence of one of this callback methods can slow down 'remove' performance
 			 */
 			//attached: function(){
