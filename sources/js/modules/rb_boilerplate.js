@@ -4,7 +4,8 @@
 	var rb = window.rb;
 	var $ = rb.$;
 
-	var Boilerplate = rb.Component.extend('boilerplate',
+
+	rb.Component.extend('boilerplate',
 		/** @lends rb.components.boilerplate.prototype */
 		{
 
@@ -18,9 +19,12 @@
 			},
 			/* use init to construct/prepare/create your component, but organize your read/write cycles (start layout reads in init and write to DOM using rb.rAF (see _writeLayout))*/
 			/**
-			 * @classdesc Class component to create a boilerplate.
 			 * @constructs
-			 * @param element
+			 * @classdesc Class component to create a boilerplate.
+			 * @name rb.components.boilerplate
+			 * @extends rb.Component
+			 * @fires boilerplate#changed
+			 * @param {Element} element
 			 * @example
 			 * <div class="rb-boilerplate js-rb-life" data-module="boilerplate">
 			 *     <div></div>
