@@ -11,6 +11,7 @@
 
 			/**
 			 * @static
+			 * @mixes rb.Component.prototype.defaults
 			 * @property {Object} defaults
 			 * //@property {Boolean} defaults.debug=true Log debug messages
 			 */
