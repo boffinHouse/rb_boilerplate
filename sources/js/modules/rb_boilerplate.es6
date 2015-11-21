@@ -3,7 +3,6 @@
 	/* jshint eqnull: true */
 	var rb = window.rb;
 	var $ = rb.$;
-
 	class Boilerplate extends rb.Component {
 		static get defaults(){
 			return {
@@ -36,12 +35,6 @@
 			super.setOption(name, value);
 		}
 
-		/*
-		 attached/detached are invoked every time the component element is inserted or removed from the document.
-		 use to bind/unbind global events (resize/scroll) or timers.
-		 but only use if really needed (+ not suitable for components, that have a lot of instances (100+) on one page at the same time):
-		 the pure existence of one of thesse callback methods can slow down 'remove' performance
-		 */
 		//attached(){
 		//
 		//}
