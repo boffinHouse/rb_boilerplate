@@ -77,7 +77,7 @@
 			},
 			jsdoc: {
 				dist : {
-					src: ['sources/js/**/*.js'],
+					src: ['sources/components/**/*.js'],
 					options: {
 						destination: 'doc',
 						template : 'node_modules/ink-docstrap/template',
