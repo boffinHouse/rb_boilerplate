@@ -1,5 +1,6 @@
 var readline = require('readline');
 var fs = require('fs');
+var glob = require('glob');
 
 var options = {
 	js: true
@@ -36,24 +37,24 @@ var write = function(file){
 	});
 };
 
-var writeAll = function(){
+var writeAll = function() {
+	var componentSrc = 'sources/components/'
+	var boilerplateDir = componentSrc + 'rb_boilerplate';
 
+	if(fs.existsSync(boilerplateDir)) {
+		fs.renameSync(boilerplateDir, componentSrc + 'rb_' + options.name);
+	}
 
-	['sources/assemble/partials/_blocks/rb_boilerplate.hbs',
-		'README.md',
-		'package.json',
-		'sources/assemble/data/rb_boilerplate.json',
-		'sources/js/modules/rb_boilerplate.js',
-		'sources/js/modules/rb_boilerplate.es6',
-		'sources/sass/_blocks/_rb_boilerplate.scss',
-		'component-helpers/assemble/layouts/default_tpl.hbs',
-		'component-helpers/assemble/pages/index.hbs',
-		'component-helpers/sass/styles_config.scss',
-		'component-helpers/sass/styles_config.scss',
-		'tests/index.html',
-		'tests/tests/boilerplate-tests.js',
-		'tests/assets/boilerplate-tests.css',
-	].forEach(write);
+	glob('!(node_modules|dist)/**/*{json,hbs,scss,es6,js,html}', function(err, files) {
+		if(err) {
+			console.log(err);
+		}
+
+		files.push('README.md', 'package.json');
+
+		files.forEach(write);
+	});
+
 };
 
 rl.question('Name of your project: ', function(name) {
@@ -63,9 +64,3 @@ rl.question('Name of your project: ', function(name) {
 	writeAll();
 	rl.close();
 });
-
-
-
-
-
-
