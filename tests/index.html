@@ -30,15 +30,15 @@
 
 <script>
 	(function(){
-		var src = 'https://boffinhouse.github.io/rawblock/sources/js/libs/dom.js';
+		var src = 'https://boffinhouse.github.io/rawblock/sources/js/libs/rb_$.js';
 		if(location.search.indexOf('jqueryinsteadrb') != -1){
 			src = 'http://code.jquery.com/jquery-2.1.4.js';
 		}
 		document.write('<script src="' + src +'"><\/script>');
 	})();
 </script>
-<script src="https://boffinhouse.github.io/rawblock/sources/js/libs/rb-cssconfig.js"></script>
-<script src="https://boffinhouse.github.io/rawblock/sources/js/libs/rawblock.js"></script>
+<script src="https://boffinhouse.github.io/rawblock/sources/js/libs/rb_crucial.js"></script>
+<script src="https://boffinhouse.github.io/rawblock/sources/js/libs/rb_main.js"></script>
 <script>
 	rb.life.autoStart = false;
 </script>

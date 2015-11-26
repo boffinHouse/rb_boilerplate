@@ -133,12 +133,6 @@
 				}
 			},
 			copy: {
-				js: {
-					cwd: 'component-helpers/js/',
-					dest: 'dist/js',
-					expand: true,
-					src: ['**/*.js']
-				}
 			},
 			scssglobbing: {
 				main: {
@@ -150,7 +144,7 @@
 		});
 
 		grunt.registerTask( 'css', ['scssglobbing', 'sass', 'autoprefixer', 'clean:scssglobbing']);
-		grunt.registerTask('build', [ 'auto_install', 'clean:dist', 'copy:js', 'css', 'assemble']);
-		grunt.registerTask('default', ['jshint', 'build', 'watch']);ins
+		grunt.registerTask('build', [ 'auto_install', 'clean:dist', 'css', 'assemble']);
+		grunt.registerTask('default', ['jshint', 'build', 'watch']);
 	};
 })();
