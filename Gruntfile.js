@@ -27,13 +27,9 @@
 					sourceMap: false
 				},
 				dist: {
-					options: {
-						outputStyle: 'nested',
-						sourceMap: false
-					},
 					files: [
 						{
-							'dist/css/styles.css': 'component-helpers/sass/tmp_styles.scss'
+							'dist/css/styles.css': 'component-helpers/sass/tmp_styles.scss',
 						}
 					]
 				}
@@ -97,7 +93,11 @@
 			},
 			watch: {
 				scss: {
-					files: ['sources/**/*.scss', 'component-helpers/sass/**/*.scss'],
+					files: [
+						'sources/**/*.scss',
+						'component-helpers/sass/**/*.scss',
+						'!component-helpers/sass/tmp_styles.scss',
+					],
 					tasks: ['build']
 				},
 				assemble: {
@@ -151,6 +151,6 @@
 
 		grunt.registerTask( 'css', ['scssglobbing', 'sass', 'autoprefixer', 'clean:scssglobbing']);
 		grunt.registerTask('build', [ 'auto_install', 'clean:dist', 'copy:js', 'css', 'assemble']);
-		grunt.registerTask('default', ['jshint', 'build', 'watch']);ins
+		grunt.registerTask('default', ['jshint', 'build', 'watch']);
 	};
 })();
