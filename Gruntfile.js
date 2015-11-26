@@ -3,6 +3,7 @@
 
 	module.exports = function (grunt) {
 		grunt.task.loadNpmTasks('grunt-auto-install');
+		grunt.task.loadNpmTasks('grunt-scssglobbing');
 		grunt.task.loadNpmTasks('grunt-sass');
 		grunt.task.loadNpmTasks('grunt-contrib-copy');
 		grunt.task.loadNpmTasks('grunt-jsdoc');
@@ -30,9 +31,11 @@
 						outputStyle: 'nested',
 						sourceMap: false
 					},
-					files: {
-						'dist/css/styles.css': 'tmp/styles.scss'
-					}
+					files: [
+						{
+							'dist/css/styles.css': 'component-helpers/sass/tmp_styles.scss'
+						}
+					]
 				}
 			},
 			clean: {
@@ -50,6 +53,13 @@
 					files: [
 						{
 							src: ['tmp']
+						}
+					]
+				},
+				scssglobbing: {
+					files: [
+						{
+							src: ['component-helpers/sass/tmp_styles.scss']
 						}
 					]
 				}
@@ -87,7 +97,7 @@
 			},
 			watch: {
 				scss: {
-					files: ['sources/components/**/*.scss', 'component-helpers/sass/**/*.scss'],
+					files: ['sources/**/*.scss', 'component-helpers/sass/**/*.scss'],
 					tasks: ['build']
 				},
 				assemble: {
@@ -129,52 +139,18 @@
 					expand: true,
 					src: ['**/*.js']
 				}
+			},
+			scssglobbing: {
+				main: {
+					files: {
+						src:"component-helpers/sass/__styles.scss"
+					}
+				}
 			}
 		});
 
-		grunt.registerTask( 'css', ['generate-tmp-styles-scss', 'sass', 'autoprefixer', 'clean:tmp']);
+		grunt.registerTask( 'css', ['scssglobbing', 'sass', 'autoprefixer', 'clean:scssglobbing']);
 		grunt.registerTask('build', [ 'auto_install', 'clean:dist', 'copy:js', 'css', 'assemble']);
-		grunt.registerTask('default', ['jshint', 'build', 'watch']);
-
-		grunt.registerTask( 'generate-tmp-styles-scss', 'Generate styles tmp file', function() {
-			var resultContent = grunt.file.read( 'component-helpers/sass/styles_config.scss' );
-
-			//get rid of ../../-prefix, since libsass does not support them in @import-statements+includePaths option
-			resultContent = resultContent.replace( /\"\.\.\/\.\.\//g, '"' );
-
-			var importMatches = resultContent.match( /^@import.+\*.*$/mg );
-
-
-			if ( importMatches ) {
-				importMatches.forEach( function(initialMatch) {
-					// remove all " or '
-					var match = initialMatch.replace( /["']/g, '' );
-					// remove the preceeding @import
-					match = match.replace( /^@import/g, '' );
-					// lets get rid of the final ;
-					match = match.replace( /;$/g, '' );
-					// remove all whitespaces
-					match = match.trim();
-
-					// get all files, which match this pattern
-					var files = grunt.file.expand(
-						{
-							'cwd': 'node_modules/rb_layout_defaults/sources/',
-							'filter': 'isFile'
-						},
-						match
-					);
-
-					var replaceContent = [];
-
-					files.forEach( function(matchedFile) {
-						replaceContent.push( '@import "node_modules/rb_layout_defaults/sources/'  + matchedFile + '";' );
-					} );
-
-					resultContent = resultContent.replace( initialMatch, replaceContent.join( "\n" ) );
-				} );
-			}
-			grunt.file.write( 'tmp/styles.scss', resultContent );
-		} );
+		grunt.registerTask('default', ['jshint', 'build', 'watch']);ins
 	};
 })();

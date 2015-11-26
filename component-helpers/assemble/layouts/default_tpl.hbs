@@ -19,64 +19,61 @@
 
 </head>
 <body>
-		<header class="rb-page-header">
-
-
-			<div class="page-header-block is-column-group is-gutters">
-				<div class="is-size-auto is-offset-left">
-					<div class="rb-logo">
-						<h1 class="logo-title">rb_boilerplate</h1>
-					</div>
-				</div>
-				<div class="is-size-auto is-offset-right">
-					<form class="rb-libchooser" id="libchooser">
-						<label>
-							<input type="radio" name="domlib"
-							       value="rbdom"
-							       data-url="https://boffinhouse.github.io/rawblock/sources/js/libs/dom.js"
-							       checked />
-							rbdom
-						</label>
-						<label>
-							<input type="radio" name="domlib"
-							       value="jquery"
-							       data-url="http://code.jquery.com/jquery-2.1.4.js" />
-							jquery
-						</label>
-					</form>
+	<header class="rb-page-header">
+		<div class="page-header-block is-column-group is-gutters-horizontal">
+			<div class="is-size-auto is-offset-left">
+				<div class="rb-logo">
+					<h1 class="logo-title">rb_boilerplate</h1>
 				</div>
 			</div>
+			<div class="is-size-auto is-offset-right">
+				<form class="rb-libchooser" id="libchooser">
+					<label>
+						<input type="radio" name="domlib"
+						       value="rbdom"
+						       data-url="https://boffinhouse.github.io/rawblock/sources/js/libs/dom.js"
+						       checked />
+						rbdom
+					</label>
+					<label>
+						<input type="radio" name="domlib"
+						       value="jquery"
+						       data-url="http://code.jquery.com/jquery-2.1.4.js" />
+						jquery
+					</label>
+				</form>
+			</div>
+		</div>
+	</header>
+	<main class="rb-page-main">
+		{{> body }}
+	</main>
+	<script>
+		(function(){
+			var input;
+			document.querySelector('#libchooser').addEventListener('change', function(){
+				var value = this.querySelector(':checked').value;
+				location.search = '?domlib='+value;
+			});
 
-		</header>
-		<main class="rb-page-main">
-			{{> body }}
-		</main>
-		<script>
-			(function(){
-				var input;
-				document.querySelector('#libchooser').addEventListener('change', function(){
-					var value = this.querySelector(':checked').value;
-					location.search = '?domlib='+value;
-				});
+			if((location.search || '').match(/domlib\=(.+)(&)*/)){
+				input = document.querySelector('#libchooser [value="'+ RegExp.$1 +'"]');
 
-				if((location.search || '').match(/domlib\=(.+)(&)*/)){
-					input = document.querySelector('#libchooser [value="'+ RegExp.$1 +'"]');
+			}
+			if(!input){
+				input = document.querySelector('#libchooser [value="rbdom"]');
+			}
+			input.checked = true;
+			document.write('<script src="' + input.getAttribute('data-url') +'"><\/script>');
+		})();
+	</script>
+	<script src="https://boffinhouse.github.io/rawblock/sources/js/libs/rb_crucial.js"></script>
+	<script src="https://boffinhouse.github.io/rawblock/sources/js/libs/rb_main.js"></script>
 
-				}
-				if(!input){
-					input = document.querySelector('#libchooser [value="rbdom"]');
-				}
-				input.checked = true;
-				document.write('<script src="' + input.getAttribute('data-url') +'"><\/script>');
-			})();
-		</script>
-		<script src="https://boffinhouse.github.io/rawblock/sources/js/libs/rb_crucial.js"></script>
-		<script src="https://boffinhouse.github.io/rawblock/sources/js/libs/rb_main.js"></script>
+	<script src="../sources/components/rb_boilerplate/rb_boilerplate.js"></script>
 
-		<script src="../sources/components/rb_boilerplate/rb_boilerplate.js"></script>
-
-		<script>
-			rb.life.init();
-		</script>
-	</body>
+	<script>
+		rb.life.init();
+	</script>
+</body>
 </html>

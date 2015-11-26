@@ -1,5 +1,5 @@
 var readline = require('readline');
-var fs = require('fs');
+var fs = require('fs-extra');
 var glob = require('glob');
 
 var options = {
@@ -55,6 +55,7 @@ var writeAll = function() {
 		files.forEach(write);
 	});
 
+	fs.removeSync('scaffold.js')
 };
 
 rl.question('Name of your project: ', function(name) {
