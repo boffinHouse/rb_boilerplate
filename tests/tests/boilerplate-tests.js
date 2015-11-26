@@ -8,9 +8,9 @@
 	});
 
 	QUnit.test("boilerplate.init", function( assert ){
-		//rb.$('#qunit-fixture');
-		//var component = rb.$('.rb-boilerplate').rbComponent();
-		//assert.ok(typeof component.init == 'function');
+		rb.$('#qunit-fixture');
+		var component = rb.$('.rb-boilerplate').rbComponent();
+		assert.ok(typeof component.init == 'function');
 
 	});
 })();
