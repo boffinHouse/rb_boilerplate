@@ -5,7 +5,6 @@
 		grunt.task.loadNpmTasks('grunt-auto-install');
 		grunt.task.loadNpmTasks('grunt-scssglobbing');
 		grunt.task.loadNpmTasks('grunt-sass');
-		grunt.task.loadNpmTasks('grunt-contrib-copy');
 		grunt.task.loadNpmTasks('grunt-jsdoc');
 		grunt.task.loadNpmTasks('grunt-contrib-clean');
 		grunt.task.loadNpmTasks('grunt-autoprefixer');
